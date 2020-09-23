@@ -2,8 +2,8 @@ const aws = require("aws-sdk");
 var fs = require('fs');
 
 var s3 = new aws.S3({
-    accessKeyId: `AKIA3D7NQ3XDMHBVJ24L`,
-    secretAccessKey: `F4Pd/NuDaEiWGsFscEwhQwFND7uqiqMjEK8qtBGW`
+    accessKeyId: `AKIA3D7N######BVJ24L`,  // replace with your access key ID
+    secretAccessKey: `F4Pd/NuDaEiWGs#####7uqiqMjEK8qtBGW`  // replace with your secret access key
 });
 
 var getParams = {
@@ -28,7 +28,7 @@ function uploadToS3(bucketName, key, filePath) {
     });
 }
 
-var filePath = './object.json';
+var filePath = './object.json';   // local file`s address
 
 uploadToS3('example-bucket-data123', 'folder1/object.json', filePath).then(function(result) {
     console.info('Success! Uploaded ' + filePath + ' to ' + result.Location);
